@@ -1,25 +1,38 @@
 <script>
-import { store } from "../store.js"
+import { store } from "../store.js";
 export default {
   name: "CardItem",
+  props: {
+    card: Object,
+  },
   data() {
-      return {
-        store
-      };
-    },
+    return {
+      store,
+    };
+  },
 };
 </script>
 
 <template>
- <div class="card" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="col d-flex justify-content-center my-1">
+    <div class="card" style="width: 18rem">
+      <img
+        :src="card.card_images[0].image_url"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ card.name }}</h5>
+        <p class="card-text">{{ card.type }}</p>
+        <p>{{ card.race }}</p>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <style lang="scss" scoped>
-   
+*{
+  margin: 0;
+  padding: 0;
+}
 </style>

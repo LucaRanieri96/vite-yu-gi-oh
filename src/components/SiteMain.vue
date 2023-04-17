@@ -1,6 +1,6 @@
 <script>
 import CardItem from "./CardItem.vue";
-import { store } from "../store.js"
+import { store } from "../store.js";
 
 export default {
   name: "SiteMain",
@@ -9,7 +9,7 @@ export default {
   },
   data() {
     return {
-      store
+      store,
     };
   },
   mounted() {},
@@ -35,11 +35,11 @@ export default {
         </ul>
       </div>
       <div class="container p-4 light">
-        <div class="found p-3"><strong>Found cards</strong></div>
+        <div class="found p-3">
+          <strong>Found {{}} cards</strong>
+        </div>
         <div class="row">
-          <div class="col">
-            <CardItem :card="card" v-for="card in store.cards"></CardItem>
-          </div>
+          <CardItem :card="card" v-for="card in store.cards"></CardItem>
         </div>
       </div>
     </div>
@@ -52,10 +52,10 @@ export default {
 main {
   background-color: $primary;
 }
-.light{
+.light {
   background-color: $light;
 }
-.found{
+.found {
   background-color: $dark;
   color: $light;
 }
