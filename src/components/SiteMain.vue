@@ -1,5 +1,6 @@
 <script>
 import CardItem from "./CardItem.vue";
+import { store } from "../store.js"
 
 export default {
   name: "SiteMain",
@@ -7,7 +8,9 @@ export default {
     CardItem,
   },
   data() {
-    return {};
+    return {
+      store
+    };
   },
   mounted() {},
 };
@@ -35,7 +38,7 @@ export default {
         <div class="found p-3"><strong>Found cards</strong></div>
         <div class="row">
           <div class="col">
-            <CardItem></CardItem>
+            <CardItem :card="card" v-for="card in store.cards"></CardItem>
           </div>
         </div>
       </div>

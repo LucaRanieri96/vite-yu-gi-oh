@@ -15,7 +15,7 @@ export default {
   },
   methods: {},
   created() {
-    store.fetchCards(store.apiUrl);
+    this.store.fetchCards(this.store.apiUrl);
   },
 };
 </script>
