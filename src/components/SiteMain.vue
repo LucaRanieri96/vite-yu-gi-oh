@@ -36,10 +36,14 @@ export default {
       </div>
       <div class="container p-4 light">
         <div class="found p-3">
-          <strong>Found {{}} cards</strong>
+          <strong>Found {{store.cards.length}} cards</strong>
         </div>
         <div class="row">
-          <CardItem :card="card" v-for="card in store.cards"></CardItem>
+          <CardItem :card="card" v-for="card in store.cards" v-if="!store.storeLoad"></CardItem>
+
+          <div class="col-12 loading" v-else>
+            <div>Loading...</div>
+          </div>
         </div>
       </div>
     </div>
