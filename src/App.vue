@@ -1,6 +1,7 @@
 <script>
 import SiteHeader from "./components/SiteHeader.vue";
 import SiteMain from "./components/SiteMain.vue";
+import { store } from "./store.js"
 
 export default {
   components: {
@@ -8,9 +9,14 @@ export default {
     SiteMain,
   },
   data() {
-    return {};
+    return {
+      store
+    };
   },
   methods: {},
+  created() {
+    store.fetchCards(store.apiUrl);
+  },
 };
 </script>
 
