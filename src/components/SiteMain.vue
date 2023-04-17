@@ -29,7 +29,7 @@ export default {
         <div class="found p-3">
           <strong>Found {{ store.cards.length }} cards</strong>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
           <CardItem
             :card="card"
             v-for="card in store.cards"
@@ -39,6 +39,7 @@ export default {
           <div class="col-12 loading" v-else>
             <div>Loading...</div>
           </div>
+          <button type="button" class="btn btn-light col-2 my-3">Next Page-></button>
         </div>
       </div>
     </div>
