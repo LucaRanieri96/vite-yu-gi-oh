@@ -18,28 +18,23 @@ export default {
 
 <template>
   <main>
-    <div class="container">
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle my-4"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Filter
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Alien</a></li>
-          <li><a class="dropdown-item" href="#"></a></li>
-          <li><a class="dropdown-item" href="#"></a></li>
-        </ul>
-      </div>
+    <div class="container pt-2">
+      <select class="form-select w-25 mb-2">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
       <div class="container p-4 light">
         <div class="found p-3">
-          <strong>Found {{store.cards.length}} cards</strong>
+          <strong>Found {{ store.cards.length }} cards</strong>
         </div>
         <div class="row">
-          <CardItem :card="card" v-for="card in store.cards" v-if="!store.storeLoad"></CardItem>
+          <CardItem
+            :card="card"
+            v-for="card in store.cards"
+            v-if="!store.storeLoad"
+          ></CardItem>
 
           <div class="col-12 loading" v-else>
             <div>Loading...</div>

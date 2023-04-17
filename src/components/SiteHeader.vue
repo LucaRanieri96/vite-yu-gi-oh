@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <header class="d-flex align-items-center gap-4">
+  <header class="d-flex align-items-center">
     <img src="../assets/imgs/Yugioh_anime_logo.webp" alt="" />
     <h1>Yu-Gi-Oh Api</h1>
   </header>
