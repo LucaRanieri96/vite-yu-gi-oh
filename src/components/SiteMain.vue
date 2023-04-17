@@ -1,27 +1,59 @@
 <script>
-import CardItem from "./CardItem.vue"
+import CardItem from "./CardItem.vue";
 
 export default {
   name: "SiteMain",
-  components : {
+  components: {
     CardItem,
   },
   data() {
-    return {
-      
-    };
+    return {};
   },
-  mounted() {
-    
-  }
+  mounted() {},
 };
 </script>
 
 <template>
-
+  <main>
+    <div class="container">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle my-4"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Filter
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Alien</a></li>
+          <li><a class="dropdown-item" href="#"></a></li>
+          <li><a class="dropdown-item" href="#"></a></li>
+        </ul>
+      </div>
+      <div class="container p-4 light">
+        <div class="found p-3"><strong>Found cards</strong></div>
+        <div class="row">
+          <div class="col">
+            <CardItem></CardItem>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/partials/_variables.scss" as *;
 
+main {
+  background-color: $primary;
+}
+.light{
+  background-color: $light;
+}
+.found{
+  background-color: $dark;
+  color: $light;
+}
 </style>
