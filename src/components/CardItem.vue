@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="col d-flex justify-content-center my-1">
+  <div class="col d-flex justify-content-center my-2">
     <div class="card" style="width: 18rem">
       <img
         :src="card.card_images[0].image_url"

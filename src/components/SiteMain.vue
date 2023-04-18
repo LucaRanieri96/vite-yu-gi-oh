@@ -20,10 +20,7 @@ export default {
   <main>
     <div class="container pt-2">
       <select class="form-select w-25 mb-2">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option v-for="card in store.cards" value="item">{{ card.archetype }}</option>
       </select>
       <div class="container p-4 light">
         <div class="found p-3">
@@ -53,7 +50,7 @@ main {
   background-color: $primary;
 }
 .light {
-  background-color: $light;
+  background-color: $bg_main;
 }
 .found {
   background-color: $dark;
