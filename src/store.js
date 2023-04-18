@@ -6,11 +6,12 @@ export const store = reactive({
   cards: [],
   info: null,
   storeLoad: false,
-  fetchCards(url) {
+
+  fetchCards(apiUrl) {
     axios
-      .get(url)
+      .get(apiUrl)
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
         this.cards = response.data.data;
       })
       .catch((error) => {
@@ -18,4 +19,5 @@ export const store = reactive({
         console.error(error.message);
       });
   },
+  
 });

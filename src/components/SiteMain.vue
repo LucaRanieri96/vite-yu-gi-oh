@@ -1,6 +1,7 @@
 <script>
 import CardItem from "./CardItem.vue";
 import { store } from "../store.js";
+import axios from "axios"
 
 export default {
   name: "SiteMain",
@@ -10,9 +11,24 @@ export default {
   data() {
     return {
       store,
+      ArchetypesUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+      archetypes: [],
     };
   },
-  mounted() {},
+  methods: {
+    retrieveArchetypes(url) {
+      axios.get(url)
+      .then(response => {
+        this.archetypes = response.data;
+      })
+      .catch(error => {
+        console.error(error.message);
+      })
+    }
+  },
+  mounted() {
+    this.retrieveArchetypes(this.ArchetypesUrl);
+  }
 };
 </script>
 
@@ -20,7 +36,7 @@ export default {
   <main>
     <div class="container pt-2">
       <select class="form-select w-25 mb-2">
-        <option v-for="card in store.cards" value="item">{{ card.archetype }}</option>
+        <option v-for="item in archetypes" :value="item.archetype_name">{{ item.archetype_name }}</option>
       </select>
       <div class="container p-4 light">
         <div class="found p-3">
